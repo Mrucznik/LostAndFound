@@ -17,31 +17,95 @@ namespace LostAndFound
             base.OnCreate(bundle);
             SetTheme(Android.Resource.Style.ThemeBlack);
             // Set our view from the "main" layout resource
-            SetContentView(Resource.Layout.login);
+            SetContentView(Resource.Layout.Main);
 
             Button butLog_in = FindViewById<Button>(Resource.Id.log_in);
-            TextView tvLogin = FindViewById<TextView>(Resource.Id.Login);
+            Button btZP = FindViewById<Button>(Resource.Id.btZalPon);
+            Button btWyl = FindViewById<Button>(Resource.Id.btWyloguj);
+            Button butZnalezione = FindViewById<Button>(Resource.Id.butZnal);
+            Button butwroc = FindViewById<Button>(Resource.Id.tbWroc);
+
+            
 
             butLog_in.Click += delegate
             {
-                SetContentView(Resource.Layout.Main);
+
+                SwitchLayout(0);
+
+                TextView tvLogin = FindViewById<TextView>(Resource.Id.Login);
                 TextView tvNick = FindViewById<TextView>(Resource.Id.textViewNick);
-                Button btWyl = FindViewById<Button>(Resource.Id.btWyloguj);
-                tvNick.Text += tvLogin.Text;
+
+                tvNick.Text = "Witaj " + tvLogin.Text;
 
                 btWyl.Click += delegate
                 {
-                    SetContentView(Resource.Layout.wylogowanie);
-                    Button btZP = FindViewById<Button>(Resource.Id.btZalPon);
+                    SwitchLayout(1);
+
 
                     btZP.Click += delegate
                     {
-                        SetContentView(Resource.Layout.login);
+                        SwitchLayout(2);
+                    };
+                };
+
+                butZnalezione.Click += delegate
+                {
+                    SwitchLayout(3);
+
+
+
+                    butwroc.Click += delegate
+                    {
+                        SwitchLayout(4);
                     };
                 };
             };
 
+           
+            
         }
+       
+
+        private void SwitchLayout(int SwitchLayoutNum)
+        {
+            LinearLayout Layout1 = FindViewById<LinearLayout>(Resource.Id.linearLayoutG1);
+            LinearLayout Layout2 = FindViewById<LinearLayout>(Resource.Id.linearLayoutG2);
+            
+            LinearLayout Layout3 = FindViewById<LinearLayout>(Resource.Id.linearLayoutG3);
+
+            LinearLayout Layout4 = FindViewById<LinearLayout>(Resource.Id.linearLayoutG4);
+
+            if (SwitchLayoutNum == 0)
+            {
+                Layout1.Visibility = ViewStates.Gone;
+                Layout2.Visibility = ViewStates.Visible;
+            }
+            else if(SwitchLayoutNum == 1)
+            {
+                    Layout2.Visibility = ViewStates.Gone;
+                    Layout3.Visibility = ViewStates.Visible;
+            }
+            else if(SwitchLayoutNum == 2)
+            {
+                Layout3.Visibility = ViewStates.Gone;
+                Layout1.Visibility = ViewStates.Visible;
+            }
+            else if (SwitchLayoutNum == 3)
+            {
+                Layout2.Visibility = ViewStates.Gone;
+                Layout4.Visibility = ViewStates.Visible;
+            }
+            else if(SwitchLayoutNum == 4)
+            {
+                Layout4.Visibility = ViewStates.Gone;
+                Layout2.Visibility = ViewStates.Visible;
+            }
+        }
+
+        
+
+
+
     }
 }
 
