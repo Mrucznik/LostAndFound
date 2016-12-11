@@ -7,38 +7,45 @@
     android:minWidth="25px"
     android:minHeight="25px"
     android:id="@+id/linearLayout3">
-  <LinearLayout
+    <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@android:color/white"
         android:minWidth="25px"
         android:id="@+id/linearLayoutTop"
-        android:visibility="visible">
-    <ImageButton
-        
-        android:background="@drawable/back"
-        android:layout_width="45dp"
-        android:layout_height="60dp"
-        android:id="@+id/tibWroc" />
-    <Button
-        android:text="Wstecz"
-        android:textColor="@android:color/black"
-        android:textSize="25dp"
-        android:background="@android:color/white"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/tbWroc" />
-    <TextView
-                android:text="Witaj "
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textSize="25dp"
-                android:layout_gravity="right"
-                android:layout_height="match_parent"
-                android:layout_width="wrap_content"
-                android:id="@+id/textViewNick"
-                android:textColor="@android:color/black" />
-  </LinearLayout>
+        android:visibility="gone">
+        <Button
+            android:background="@drawable/back"
+            android:layout_width="45dp"
+            android:layout_height="60dp"
+            android:id="@+id/tibWroc" />
+        <Button
+            android:text="Wstecz"
+            android:textColor="@android:color/black"
+            android:textSize="25dp"
+            android:background="@android:color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/tbWroc" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LinearView"
+        android:visibility="gone"
+        android:textAlignment="center">
+        <TextView
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="25dp"
+            android:layout_gravity="right"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:id="@+id/textViewNick"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -125,7 +132,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/linearLayout1">
-            
             <Button
                 android:text="Znalazłem"
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -199,6 +205,25 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/textView1"
                 android:textColor="@android:color/black" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/OgloszenieLayout">
+                <Button
+                    android:text="Więcej"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/button1"
+                    android:layout_marginBottom="10dp" />
+                <TextView
+                    android:text="Znalazłem placka, wczoraj wieczorem o 21 w Pizzeri .Net na przeciwko Azura..."
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/tFView"
+                    android:textColor="@android:color/black" />
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
