@@ -4,13 +4,14 @@ using Android.App;
 using Android.Views;
 using Android.Widget;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace LostAndFound
 {
     [Activity(Label = "LostAndFound", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
-
+       
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -51,8 +52,17 @@ namespace LostAndFound
                 butZnalezione.Click += delegate
                 {
                     SwitchLayout(3);
+                    
 
-
+                    //LinearLayout ll = FindViewById<LinearLayout>(Resource.Id.TestLyn);
+                    //for (int i = 0; i < 3; i++)
+                    //{
+                    //    var LinearLayout = new LinearLayout(this)
+                    //    {
+                    //        Orientation.Horizontal = 
+                    //    };
+                    //        ll.AddView(LinearLayout);
+                    //};
 
                     butwroc.Click += delegate
                     {
