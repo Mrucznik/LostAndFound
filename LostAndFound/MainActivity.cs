@@ -26,6 +26,7 @@ namespace LostAndFound
             Button butZnalezione = FindViewById<Button>(Resource.Id.butZnal);
             Button butwroc = FindViewById<Button>(Resource.Id.tbWroc);
             Button butwroc2 = FindViewById<Button>(Resource.Id.tibWroc);
+            Button btDod = FindViewById<Button>(Resource.Id.butDodaj);
 
 
 
@@ -36,7 +37,7 @@ namespace LostAndFound
 
                 TextView tvLogin = FindViewById<TextView>(Resource.Id.Login);
                 TextView tvNick = FindViewById<TextView>(Resource.Id.textViewNick);
-
+                
                 tvNick.Text = "Witaj " + tvLogin.Text;
 
                 btWyl.Click += delegate
@@ -48,7 +49,25 @@ namespace LostAndFound
                     {
                         SwitchLayout(2);
                     };
+
+                    
                 };
+
+                btDod.Click += delegate
+                {
+                    SwitchLayout(5);
+
+                    butwroc.Click += delegate
+                    {
+                        SwitchLayout(4);
+                    };
+
+                    butwroc2.Click += delegate
+                    {
+                        SwitchLayout(4);
+                    };
+                };
+
 
                 butZnalezione.Click += delegate
                 {
@@ -98,6 +117,9 @@ namespace LostAndFound
 
             LinearLayout LayoutWitaj = FindViewById<LinearLayout>(Resource.Id.LinearView);
 
+            LinearLayout LayautDodaj = FindViewById<LinearLayout>(Resource.Id.DodOgl);
+
+
 
             if (SwitchLayoutNum == 0)
             {
@@ -116,6 +138,7 @@ namespace LostAndFound
                 Layout1.Visibility = ViewStates.Visible;
                 LayoutWitaj.Visibility = ViewStates.Gone;
                 LayoutTop.Visibility = ViewStates.Gone;
+                LayautDodaj.Visibility = ViewStates.Gone;
             }
             else if (SwitchLayoutNum == 3)
             {
@@ -131,6 +154,14 @@ namespace LostAndFound
                 Layout2.Visibility = ViewStates.Visible;
                 LayoutWitaj.Visibility = ViewStates.Visible;
                 LayoutTop.Visibility = ViewStates.Gone;
+            }
+            else if (SwitchLayoutNum == 5)
+            {
+                Layout2.Visibility = ViewStates.Gone;
+                LayautDodaj.Visibility = ViewStates.Visible;
+
+                LayoutWitaj.Visibility = ViewStates.Gone;
+                LayoutTop.Visibility = ViewStates.Visible;
             }
         }
 
