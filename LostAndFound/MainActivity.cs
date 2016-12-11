@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.Widget;
 using Android.OS;
+using System;
 
 namespace LostAndFound
 {
@@ -10,9 +11,9 @@ namespace LostAndFound
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
+            SetTheme(Android.Resource.Style.ThemeBlack); // Remove this if you wanna be fired
 
-            // Set our view from the "main" layout resource
-            // SetContentView (Resource.Layout.Main);
+            SetContentView(Resource.Layout.login);
         }
     }
 }
