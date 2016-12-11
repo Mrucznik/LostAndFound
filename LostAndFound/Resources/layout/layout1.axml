@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+        <CheckBox
+            android:paddingTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Znalazlem"
+            android:text="" />
+        <TextView
+            android:text="Znalazłem"
+            android:textColor="@android:color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <CheckBox
+            android:paddingTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Zgubilem"
+            android:text="" />
+        <TextView
+            android:text="Zgubiłem"
+            android:textColor="@android:color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <EditText
+        android:paddingTop="10dp"
+        android:inputType="text"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:id="@+id/Tytul"
+        android:layout_gravity="center"
+        android:text="Tytuł" />
+    <EditText
+        android:paddingTop="10dp"
+        android:inputType="text"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        android:id="@+id/Opis"
+        android:layout_gravity="center"
+        android:text="Opis" />
+    <EditText
+        android:paddingTop="10dp"
+        android:inputType="text"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:id="@+id/Rejon"
+        android:layout_gravity="center"
+        android:text="Rejon" />
+    <EditText
+        android:paddingTop="10dp"
+        android:inputType="text"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:id="@+id/Pytanie"
+        android:layout_gravity="center"
+        android:text="Pytanie kluczowe" />
+    <Button
+        android:text="Wyślij"
+        android:paddingTop="10dp"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:id="@+id/btWyslij" />
+</LinearLayout>
