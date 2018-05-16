@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections;
 using Android.OS;
 using Android.App;
 using Android.Views;
 using Android.Widget;
 using System.Threading.Tasks;
+using LostAndFound.Azure;
 
 namespace LostAndFound
 {
@@ -11,9 +13,28 @@ namespace LostAndFound
     public class MainActivity : Activity
     {
 
+        AzureDataService azureService;
+        private string xd;
+
+        private async void Inicjuj()
+        {
+            await azureService.Initialize();
+            await azureService.AdUser(true);
+        }
+
+        private async void test()
+        {
+            var lol = await azureService.GetUsers();
+            foreach (var x in lol)
+            {
+                xd+=(x.ToString());
+            }
+        }
 
         protected override void OnCreate(Bundle bundle)
         {
+            Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
+            Inicjuj();
             base.OnCreate(bundle);
             SetTheme(Android.Resource.Style.ThemeBlack);
             // Set our view from the "main" layout resource
@@ -27,7 +48,7 @@ namespace LostAndFound
                 SetContentView(Resource.Layout.Main);
                 TextView tvNick = FindViewById<TextView>(Resource.Id.textViewNick);
                 Button btWyl = FindViewById<Button>(Resource.Id.btWyloguj);
-                tvNick.Text += tvLogin.Text;
+                tvNick.Text += xd;
 
                 btWyl.Click += delegate
                 {
